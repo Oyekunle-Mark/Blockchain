@@ -62,9 +62,6 @@ if __name__ == '__main__':
         # Handle non-json response
         try:
             data = r.json()
-
-            # deserialize the data with json.loads
-            data = json.loads(data)
         except ValueError:
             print("Internal server error!")
             print("Response returned:")
@@ -82,15 +79,12 @@ if __name__ == '__main__':
         r = requests.post(url=node + "/mine", json=post_data)
         data = r.json()
 
-        # deserialize the data with json.loads
-        data = json.loads(data)
-
         # If the server responds with a 201
         if r.status_code == 201:
             # add 1 to the number of coins mined and print it.  Otherwise,
             coin_count += 1
             print(data["message"])
-            print(f"You have {coin_count} coin[s].")
+            print(f"You have {coin_count} coin[s]\n")
         elif r.status_code == 400:
             # print the message from the server.
             print(data["message"])
