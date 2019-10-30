@@ -53,7 +53,7 @@ if __name__ == '__main__':
         print("Miner ID is", id)
 
     # Keep track of the number of coin
-    coin = 0
+    coin_count = 0
 
     # Run forever until interrupted
     while True:
@@ -79,9 +79,9 @@ if __name__ == '__main__':
         # If the server responds with a 201
         if r.status_code == 201:
             # add 1 to the number of coins mined and print it.  Otherwise,
-            coin += 1
+            coin_count += 1
             print(data["message"])
-            print(f"You gained a coin. New coin balance is {coin}")
+            print(f"You gained a coin. New coin balance is {coin_count}")
         elif r.status_code == 400:
             # print the message from the server.
             print(data["message"])
