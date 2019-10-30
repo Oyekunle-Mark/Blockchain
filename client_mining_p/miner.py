@@ -93,8 +93,8 @@ if __name__ == '__main__':
         if r.status_code == 201:
             # add 1 to the number of coins mined and print it.  Otherwise,
             coin_count += 1
-            print(data["message"])
-            print(f"You have {coin_count} coin[s]\n")
+            print('*', data["message"], '*')
+            print(f"=> You have {coin_count} coin[s]\n")
         elif r.status_code == 400:
             # print the message from the server.
-            print(data["message"])
+            print('*', data["message"], '*')
