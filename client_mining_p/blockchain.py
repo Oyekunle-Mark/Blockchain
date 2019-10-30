@@ -114,6 +114,11 @@ blockchain = Blockchain()
 
 @app.route('/mine', methods=['POST'])
 def mine():
+    """Validates if a clients proof it correct
+
+    Returns:
+        json -- message depending on if the proof is valid or not
+    """
     # get the request body
     data = request.get_json()
     # check that proof and id are present in the data
@@ -144,6 +149,11 @@ def mine():
 
 @app.route('/chain', methods=['GET'])
 def full_chain():
+    """Returns the length and the blocks in the chain
+
+    Returns:
+        json -- A JSON object with the length and the blocks in the chain
+    """
     response = {
         'length': len(blockchain.chain),
         'chain': blockchain.chain,
@@ -154,6 +164,11 @@ def full_chain():
 
 @app.route('/last_block', methods=['GET'])
 def last_block():
+    """Returns the last block in the chain
+
+    Returns:
+        json -- the last block in the chain
+    """
     return jsonify(blockchain.last_block)
 
 
