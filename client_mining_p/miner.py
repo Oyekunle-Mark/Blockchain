@@ -26,7 +26,8 @@ def proof_of_work(block):
     # end time
     end_time = time()
     # print the time it took to find proof
-    print(f"Took {end_time - start_time} seconds to find proof")
+    print('Proof found.')
+    print(f"Took {end_time - start_time} seconds to find proof.\n")
 
     return proof
 
@@ -81,7 +82,6 @@ if __name__ == '__main__':
         # Get the block from `data` and use it to look for a new proof
         print('Finding proof...')
         new_proof = proof_of_work(data)
-        print('Proof found.\n')
 
         # When found, POST it to the server {"proof": new_proof, "id": id}
         post_data = {"proof": new_proof, "id": id}
