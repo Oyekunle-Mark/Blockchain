@@ -58,14 +58,17 @@ if __name__ == '__main__':
     # Run forever until interrupted
     while True:
         r = requests.get(url=node + "/last_block")
+
         # Handle non-json response
         try:
             data = r.json()
         except ValueError:
-            print("Error:  Non-json response")
+            print("Internal server error!")
             print("Response returned:")
             print(r)
-            break
+
+            # continue mining
+            continue
 
         # Get the block from `data` and use it to look for a new proof
         new_proof = proof_of_work(data)
