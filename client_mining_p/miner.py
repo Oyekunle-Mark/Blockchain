@@ -48,10 +48,9 @@ if __name__ == '__main__':
         node = "http://localhost:5000"
 
     # Load ID
-    f = open("my_id.txt", "r")
-    id = f.read()
-    print("ID is", id)
-    f.close()
+    with open("my_id.txt", "r") as f:
+        id = f.read()
+        print("Miner ID is", id)
 
     # Keep track of the number of coin
     coin = 0
