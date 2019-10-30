@@ -50,7 +50,7 @@ if __name__ == '__main__':
     # Load ID
     with open("my_id.txt", "r") as f:
         id = f.read()
-        print("Miner ID is", id)
+        print("Miner ID is", id, "\n")
 
     # Keep track of the number of coin
     coin_count = 0
@@ -71,7 +71,9 @@ if __name__ == '__main__':
             continue
 
         # Get the block from `data` and use it to look for a new proof
+        print('Finding proof...')
         new_proof = proof_of_work(data)
+        print('Proof found.\n')
 
         # When found, POST it to the server {"proof": new_proof, "id": id}
         post_data = {"proof": new_proof, "id": id}
