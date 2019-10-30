@@ -134,11 +134,11 @@ def mine():
         block = blockchain.new_block(data["proof"])
 
         return jsonify({
-            "message": "Successfully mined"
-        }), 200
+            "message": "New Block Forged."
+        }), 201
     else:
         return jsonify({
-            "message": "Mining unsuccessful"
+            "message": "Unable to forge block!"
         }), 400
 
 
