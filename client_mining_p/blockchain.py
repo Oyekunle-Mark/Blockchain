@@ -130,6 +130,9 @@ def mine():
 
     # return a message indicating success or failure
     if is_valid:
+        # create a new block and add it to the chain
+        block = blockchain.new_block(data["proof"])
+
         return jsonify({
             "message": "Successfully mined"
         }), 200
