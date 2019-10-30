@@ -142,6 +142,11 @@ def full_chain():
     return jsonify(response), 200
 
 
+@app.route('/last_block', methods=['GET'])
+def last_block():
+    return jsonify(blockchain.last_block)
+
+
 # Run the program on port 5000
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
