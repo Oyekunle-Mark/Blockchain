@@ -1,5 +1,5 @@
 // get the id field
-const idField = document.querySelector('#user-id h4');
+const idField = document.querySelector('#user-id h3');
 
 // show the user id if available
 if (localStorage.getItem('id')) {
