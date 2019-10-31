@@ -45,6 +45,11 @@ class Blockchain(object):
         # Append the chain to the block
         self.chain.append(block)
 
+        # write the chain to the chain_seed.py file
+        with open("chain_seed.py", "w") as f:
+            # since f.write takes a string, convert the object to string with json.dumps
+            f.write(json.dumps(self.chain))
+
         # Return the new block
         return block
 
