@@ -99,3 +99,8 @@ fetch(`${URL}/chain`)
     }
   })
   .catch(err => console.log(err));
+
+// get the refresh button
+const refreshButton = document.querySelector('#refresh button');
+
+refreshButton.addEventListener('click', () => location.reload());
