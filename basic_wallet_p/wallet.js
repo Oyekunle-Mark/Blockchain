@@ -21,7 +21,15 @@ idSaveButton.addEventListener('click', () => {
   idField.textContent = idInput.value;
 });
 
+// function to create element
+const createNode = element => document.createElement(element);
+
+// function to append node to another
+const appendNode = (par, el) => par.appendChild(el);
+
 fetch(`${URL}/chain`)
   .then(res => res.json())
-  .then(data => {console.log(data);})
+  .then(data => {
+    console.log(data);
+  })
   .catch(err => console.log(err));
