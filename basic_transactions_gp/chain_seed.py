@@ -1,4 +1,5 @@
 [
+    # the genesis block
     {
         "index": 1,
         "previous_hash": 1,
