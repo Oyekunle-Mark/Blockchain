@@ -35,11 +35,17 @@ const appendNode = (par, el) => par.appendChild(el);
 // get the transactions table
 const transactionsTable = document.querySelector('#transaction table');
 
+// get coin balance
+const coinBalance = document.querySelector('#balance h3');
+
 // fetch the full chain and find the users transactions
 fetch(`${URL}/chain`)
   .then(res => res.json())
   .then(data => {
     const chain = data['chain'];
+
+    // set the coin count to 0
+    let coins = 0;
 
     // loop through the blocks in the chain
     for (let i = 0; i < chain.length; i++) {
@@ -68,6 +74,17 @@ fetch(`${URL}/chain`)
           const amount = createNode('td');
           amount.textContent = transactions[i]['amount'];
           appendNode(trade, amount);
+
+          // if the current user is the user, deducts the amount from the coin balance
+          // otherwise add it to the balance
+          if (transactions[i]['sender'] === userId) {
+            coins -= Number(amount.textContent);
+          } else {
+            coins += Number(amount.textContent);
+          }
+
+          // set the coin balance to coin
+          coinBalance.textContent = coins;
 
           // add tr to table
           appendNode(transactionsTable, trade);
