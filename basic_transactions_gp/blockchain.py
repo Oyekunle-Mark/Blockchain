@@ -9,11 +9,12 @@ from flask_cors import CORS
 
 class Blockchain(object):
     def __init__(self):
-        self.chain = []
-        self.current_transactions = []
+        # read from chain_seed file and set it as chain
+        with open("chain_seed.py", "r") as f:
+            # f.read() returns a string, pass it to json.loads to convert it to python object
+            self.chain = json.loads(f.read())
 
-        # Create the genesis block
-        self.new_block(previous_hash=1, proof=100)
+        self.current_transactions = []
 
     def new_block(self, proof, previous_hash=None):
         """
@@ -58,6 +59,7 @@ class Blockchain(object):
         # append the sender, recipient and amount to the current transactions
         self.current_transactions.append(
             {'sender': sender, 'recipient': recipient, 'amount': amount})
+
         # return the last blocks index + 1
         return self.last_block['index'] + 1
 
