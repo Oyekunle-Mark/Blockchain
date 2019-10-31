@@ -1,11 +1,14 @@
+// get the id field
 const idField = document.querySelector('#user-id h4');
 
+// show the user id if available
 if (localStorage.getItem('id')) {
   idField.textContent = localStorage.getItem('id');
 } else {
-  idField.textContent = 'nope';
+  idField.textContent = 'No ID provided yet';
 }
 
+// gets and saves the id
 const idSaveButton = document.querySelector('#user-id button');
 const idInput = document.querySelector('#user-id input');
 
