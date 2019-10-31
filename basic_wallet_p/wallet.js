@@ -79,17 +79,23 @@ fetch(`${URL}/chain`)
           // otherwise add it to the balance
           if (transactions[i]['sender'] === userId) {
             coins -= Number(amount.textContent);
+
+            // color sent coin trade red
+            trade.setAttribute('style', 'color: red;');
           } else {
             coins += Number(amount.textContent);
-          }
 
-          // set the coin balance to coin
-          coinBalance.textContent = coins;
+            // color received coin trade blue
+            trade.setAttribute('style', 'color: blue;');
+          }
 
           // add tr to table
           appendNode(transactionsTable, trade);
         }
       }
+
+      // set the coin balance to coin
+      coinBalance.textContent = coins;
     }
   })
   .catch(err => console.log(err));
