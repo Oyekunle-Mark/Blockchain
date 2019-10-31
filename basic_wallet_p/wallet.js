@@ -1,3 +1,6 @@
+// set the url
+const URL = 'http://localhost:5000';
+
 // get the id field
 const idField = document.querySelector('#user-id h3');
 
@@ -17,3 +20,8 @@ idSaveButton.addEventListener('click', () => {
 
   idField.textContent = idInput.value;
 });
+
+fetch(`${URL}/chain`)
+  .then(res => res.json())
+  .then(data => {console.log(data);})
+  .catch(err => console.log(err));
