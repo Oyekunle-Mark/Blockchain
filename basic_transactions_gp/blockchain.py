@@ -141,6 +141,7 @@ def mine():
         return jsonify({
             "message": "Request body must have id and proof"
         }), 400
+
     # find the string of the last block
     last_block_string = json.dumps(
         blockchain.last_block, sort_keys=True).encode()
@@ -149,11 +150,19 @@ def mine():
 
     # return a message indicating success or failure
     if is_valid:
+        # reward the miner for work so it can be part of the new block
+        blockchain.new_transaction(
+            sender="0", recipient=data["id"], amount=1)
+
         # create a new block and add it to the chain
         block = blockchain.new_block(data["proof"])
 
         return jsonify({
-            "message": "New Block Forged."
+            'message': "New Block Forged",
+            'index': block['index'],
+            'transactions': block['transactions'],
+            'proof': block['proof'],
+            'previous_hash': block['previous_hash']
         }), 201
     else:
         return jsonify({
