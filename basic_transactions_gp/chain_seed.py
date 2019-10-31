@@ -14,7 +14,7 @@
         "transactions": [
             {
                 "amount": 1,
-                "recipient": "Brian",
+                "recipient": "DCB5176F-786F-4552-BFDE-2AD3A449FC59",
                 "sender": "0"
             }
         ]
@@ -27,7 +27,7 @@
         "transactions": [
             {
                 "amount": 1,
-                "recipient": "Brian",
+                "recipient": "DCB5176F-786F-4552-BFDE-2AD3A449FC59",
                 "sender": "0"
             }
         ]
@@ -53,7 +53,7 @@
         "transactions": [
             {
                 "amount": "3",
-                "recipient": "Beej",
+                "recipient": "DCB5176F-786F-4552-BFDE-2AD3A449FC59",
                 "sender": "Brian"
             },
             {
@@ -70,9 +70,9 @@
         "timestamp": 1571852940.9420102,
         "transactions": [
             {
-                "amount": ".5",
+                "amount": "2",
                 "recipient": "Brady",
-                "sender": "Beej"
+                "sender": "DCB5176F-786F-4552-BFDE-2AD3A449FC59"
             },
             {
                 "amount": ".5",
