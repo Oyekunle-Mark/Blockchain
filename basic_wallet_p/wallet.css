@@ -14,7 +14,8 @@ td {
   padding: 10px;
 }
 
-h2, h3 {
+h2,
+h3 {
   display: inline;
 }
 
@@ -42,6 +43,12 @@ button {
   cursor: pointer;
 }
 
-#user-id, #balance, #transaction {
+#user-id,
+#balance,
+#transaction {
   margin-top: 20px;
+}
+
+#refresh {
+  margin-top: 50px;
 }
