@@ -1,0 +1,54 @@
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+h2,
+h3 {
+  display: inline;
+}
+
+h2 {
+  margin: 10px;
+}
+
+h3 {
+  color: green;
+}
+
+input {
+  margin: 20px 10px;
+  border: 1px solid brown;
+  width: 300px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+button {
+  height: 22px;
+  background: yellowgreen;
+  border: 1px solid yellowgreen;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#user-id,
+#balance,
+#transaction {
+  margin-top: 20px;
+}
+
+#refresh {
+  margin-top: 50px;
+}
